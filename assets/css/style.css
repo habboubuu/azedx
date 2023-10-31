@@ -1,0 +1,1152 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
+/*-----------------------------------*\
+  # style.css
+\*-----------------------------------*/
+
+
+/* -------------------------*\
+  #CUSTOM PROPERTY
+\*--------------------------*/
+
+:root{
+  /**
+  * colors
+  */
+--raisin-black-2: #23222f;
+--raisin-black-1: #292839;
+--majorelle-blue: #5c50dc;
+--ghost-white-1: #fafaff;
+--ghost-white-2: #f0f2fa;
+--white-opacity: #ffffff80;
+--independence: #3b3951;
+--lavender-web: #ece9fb;
+--eerie-black: #22262a;
+--cool-gray: #8d8bac;
+--sapphire: #0056b3;
+--white: #ffffff;
+
+/**
+* typograph
+*/
+
+--ff-quicksand: "Quicksand", sans-serif;
+--ff-mulish: "Mulish", sans-serif;
+
+--fs-1: 36px;
+--fs-2: 28px;
+--fs-3: 20px;
+--fs-4: 17px;
+--fs-5: 16px;
+--fs-6: 15px;
+--fs-7: 14px;
+
+--fw-500: 500;
+--fw-600: 600;
+--fw-700: 700;
+
+/**
+* transition
+*/
+
+--transition: 0.25s ease;
+
+/**
+* spacing
+*/
+
+--section-padding: 80px;
+
+}
+
+/* -------------------------*\
+  #RESET
+\*--------------------------*/
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none; /* hiya dik no9ta */
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+img,
+span,
+input,
+label,
+button,
+ion-icon,
+textarea{
+  display: block;
+}
+
+button{
+  border: none;
+  background: none;
+  font: inherit;   /* y3ni input w textarea ghadi yakhdu nfs font l3and aba2 dyalhum */
+  cursor: pointer;
+}
+
+input,
+textarea{
+  border: none;
+  font:inherit;
+  width: 100%;
+}
+
+html{
+  font-family: var(--ff-quicksand);
+  scroll-behavior: smooth;
+}
+
+body{
+  background: var(--white);
+}
+
+/*------------------------------*\
+ #REFUSED STYLE
+\*------------------------------*/
+.container{
+  padding-inline: 15px; /* kan3tiw  wahd 15px bach nba3du mn jnab*/
+}
+
+.h1,
+.h2,
+.h3{
+  color: var(--independence);
+  font-family: var(--ff-mulish);
+  line-height: 1.2;
+}
+/* l9yas h */
+.h1 { font-size: var(--fs-1);}
+
+.h2 { font-size: var(--fs-2);}
+
+.h3 { font-size: var(--fs-3);}
+/* button */
+.btn{
+  font-size: var(--fs-6);
+  font-weight: var(--fw-700);
+  padding: 15px 30px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+/* hover dyal button*/
+.btn:is(:hover, :focus) {transform: translate(-2px);}
+/* dicore button */
+.btn-primary{
+  background: var(--majorelle-blue);
+  color: var(--white);
+}
+/* kansawbu dell fach njibu souris yban */
+.btn-primary:is(:hover, :focus){
+  --majorelle-blue: hsl(245, 67%, 59%);
+  box-shadow: 0 3px 10px hsla(245, 67%, 59%, 0.5);
+}
+/* button dyal section about */
+.btn-outline{
+  border: 1px solid var(--majorelle-blue);
+  color: var(--majorelle-blue);
+}
+
+.btn-outline:is(:hover, :focus) {
+  background: var(--majorelle-blue);
+  color: var(--white);
+  box-shadow: 0 3px 10px hsla(245, 67%, 59%, 0.5);
+}
+/* button dyal features */
+.btn-secondary{
+  background: hsla(245, 67%, 59%, 0.15);
+  color: var(--majorelle-blue);
+}
+
+/* ghatab9 fi Features w blog w contact */
+.section-title{
+  text-align: center;
+}
+
+.section-text{
+  color: var(--cool-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  text-align: center;
+}
+
+
+/*------------------------------*\
+ #HEADER
+\*------------------------------*/
+
+header{
+  width: 100%;
+  height: 80px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05); /* katal3 line fi akher list */
+  padding: 0 50px; /* 50 katba3d 3naser */
+}
+img{
+  width: 100%;
+  
+}
+
+header .header-left{
+  display: flex;
+  align-items: center;
+}
+
+header .header-left .logo{
+  width: 100px;
+  cursor: pointer;
+}
+/*header nav{
+  display: flex;
+}*/
+
+header .header-left nav{
+  margin-left: 50px; /* space khariji mn liser kayba3d mn logo */
+}
+
+header .header-left nav ul{
+  display: flex;
+}
+
+nav ul li a{
+  display: block;
+  color: var(--raisin-black-2);
+  font-size: 18px;
+  padding: 5px 10px; /* space mabyn kul li a */
+  margin: 0 5px; /* taba3ud byn li a */
+  transition: var(--transition);
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+  color: var(--majorelle-blue);
+  border-bottom: 2px solid var(--majorelle-blue);
+}
+
+header nav .login-signup {
+  display: none;   /* kan7aydu button nav */
+}
+
+header .login-signup {
+  color: var(--raisin-black-2);
+  font-weight: bold;
+}
+
+header .login-signup a {
+  display: inline-block; /* kaytal3u f star */  
+  color: var(--white);
+  border: 1px solid var(--eerie-black);
+  background: var(--majorelle-blue);
+  border-color: var(--majorelle-blue);
+  padding: 5px 12px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.login-signup a:hover{
+  background: var(--white);
+  color: var(--majorelle-blue);
+  border-color: #0e0d0d;
+  box-shadow: 0 3px 10px hsla(245, 67%, 59%, 0.5);
+  
+}
+
+header .header-right{
+  display: flex;
+}
+
+header .header-right .hamburger{
+  margin-left: 20px; /* space khariji mn liser */
+  cursor: pointer;
+  display: none;
+}
+header .header-right .hamburger div{
+  width: 30px;
+  height: 2px;
+  margin: 6px 0;
+  background: #0e0d0d;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  header {
+      padding: 0 20px;
+  }
+  header .header-right .hamburger {
+      display: block;
+  }
+  header .header-left nav {
+      margin: 0;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: fit-content;
+      /*width: fit-content;*/
+      background-color: var(--white);
+      padding: 30px;
+      transition: var(--transition);
+      text-align: center;
+      z-index: 1;
+  }
+  header .header-left nav.active {
+      top: 70px;
+  }
+  header .header-left nav ul {
+      display: block;
+      width: fit-content;
+  }
+}
+@media only screen and (max-width: 500px) {
+  header nav .login-signup {
+      display: block;
+      margin-top: 20px;
+      margin-right: 130px;
+  }
+  header .header-right .login-signup {
+      display: none;
+  }
+}
+
+/*------------------------------*\
+ #HERO
+\*------------------------------*/
+.hero{
+  padding: 60px 0 var(--section-padding); /*hna ndiro space ma bayn header wkaytla3 lina dakchi likan mkhabi*/
+  background: var(--ghost-white-1);
+}
+
+.hero-content{
+  margin-bottom: 80px; /* msafa dakhiliya mn lta7t */
+}
+
+.hero-title{
+  margin-bottom: 25px; /* msafa dakhiliya mn lta7t */
+}
+
+.hero-text{
+  color: var(--cool-gray); /* kalwnu paraghraph */
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  margin-bottom: 40px; /*masafa kharijya mn lta7t*/
+}
+
+.form-text{
+  color: var(--independence);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  margin-bottom: 20px; /* masafa kharijya mn lta7t */
+}
+
+.form-text span{
+  display: inline-block; /* kanjibo emoji f nfs star p tani */
+  font-size: 20px;
+}
+
+.email-field{
+  background: var(--ghost-white-2);
+  padding: 17px 20px; /* valeur lawla dyal lfu9 wta7y tanya dyal limn w liser*/
+  border-radius: 8px;
+  margin-bottom: 20px; /* masafa kharijya mn lta7t */
+}
+
+.email-field:focus {
+  outline-color: var(--majorelle-blue); /* fach ndir focus 3la input kaywali outline blue */
+}
+
+.hero .btn-primary{
+  margin-inline: auto; /* kanjib button wst */
+}
+
+.hero-banner img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+/*------------------------------*\
+ #ABOUT
+\*------------------------------*/
+.about{
+  padding-block: var(--section-padding); /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir section */ 
+}
+
+.about-content{
+  margin-bottom: 30px; /* masafa kharijya mn lta7t bach n3zlu content lawl */
+}
+
+.about-icon{
+  width: 60px;
+  height: 60px;
+  background: var(--lavender-web); /* 7it 7atin icon wst div ghadi tban background */
+  display: grid;
+  place-items: center;  /* gha tjib icon f center dyal div */
+  color: var(--majorelle-blue);
+  font-size: 40px;
+  border-radius: 4px;
+  margin-bottom: 20px; /* masafa kharijiya mn ta7t bach nb3du div dyal icon */
+}
+
+.about-title{
+  margin-bottom: 10px; /* masafa kharijiya mn ta7t bach nb3du title */
+}
+
+.about-text{
+  color: var(--cool-gray);
+  font-weight: var(--fw-500);
+  line-height: 1.8;
+  margin-bottom: 20px;  /* masafa kharijiya mn ta7t bach nb3du p */
+}
+
+.about-list{
+  display: grid;
+  gap: 20px;  /* taba3ud byn cards */
+}
+
+.about-card{
+  padding: 20px;  /* masafa dakhiliya */
+  text-align: center;
+  box-shadow: 0 3px 12px hsla(233, 77%, 10%, 0.06); /* kay2ater kul div dyal cards */
+  border-radius: 4px; /* in7na2 border cards */
+  transition: var(--transition);
+}
+
+.about-card:hover{
+  background: var(--majorelle-blue);
+  transform: translateY(-5px); /* hna drna translate Y ghadi nchufo cards kat7rek chwiya lfuk b hover ! */
+  box-shadow: 0 5px 18px hsla(245, 67%, 59%, 0.4); /* ky3ud yban whd lawn 9rib background b hover */
+}
+
+.about-card .card-icon{
+  width: 60px;
+  height: 60px;
+  background: var(--lavender-web);
+  display: grid;
+  place-items: center;
+  color: var(--majorelle-blue);
+  font-size: 28px;
+  border-radius: 50%;
+  margin-inline: auto; /* katjib div dyal card-icon l wst*/
+  margin-bottom: 20px;  /* masafa kharijiya mn ta7t bach nb3du div icon */
+  transition: var(--transition);
+}
+
+.about-card:hover .card-icon{
+  background: #ffffff26; /* lawn lghadi ywli f background jdid */
+  color: var(--white); /* kybdl lawn icon b hover l byad */
+  box-shadow: 0 0 0 8px #ffffff0d; /* kywli whd shadow dyr b div icon b hover */
+}
+
+.about-card .card-title{
+  margin-bottom: 10px;  /* masafa kharijiya mn ta7t bach nb3du title */
+  transition: var(--transition);
+}
+
+/* note: finma bghit ndir lchi 3nser hover khasni nkun dayer lih mn 9bl transition ! <3 */
+
+.about-card:hover .card-title{
+  color: var(--white);
+}
+
+.about-card .card-text{
+  color: var(--cool-gray);
+  font-size: var(--fs-6);
+  line-height: 1.8;
+  transition: var(--transition);
+}
+
+.about-card:hover .card-text{ color: #ffffff80;} /* kaybdl color text */
+
+/*-----------------------------*\
+ #FEATURES
+\*-----------------------------*/
+.features{
+  padding-block: var(--section-padding); /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir section */
+  background: var(--ghost-white-1);
+}
+
+.features .section-title{
+  margin-bottom: 15px; /* space l title mn ta7t */
+}
+
+.features .section-text{
+  margin-bottom: 60px;  /* space l p mn ta7t bach yb3ad 3la swra */
+}
+
+.features-wrapper:not(:last-child){
+  margin-bottom: 80px; /* space mn ta7t dyal content dyal features lawl */
+}
+
+.features-banner img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.features-content-subtitle{
+  display: flex; /* katwli icon hda title dyalha */
+  align-items: center;
+  gap: 10px; /* taba3ud ma byn icon w title dyalha */
+  font-size: var(--fs-5);
+  color: var(--eerie-black);
+  margin-bottom: 20px; /* space l title mn ta7t */
+  margin-top: 15px;
+}
+
+.features-content-subtitle ion-icon{
+  color: var(--majorelle-blue);
+  font-size: 20px;
+}
+
+.features-content-title{
+  font-size: var(--fs-2);
+  font-family: var(--ff-mulish);
+  color: var(--independence);
+  font-weight: var(--fw-600);
+  margin-bottom: 25px; /* space l title mn ta7t */
+}
+
+.features-content-title strong{
+  font-weight: var(--fw-700);
+}
+
+.features-content-text{
+  font-size: var(--fs-6);
+  color: var(--cool-gray);
+  line-height: 1.7;
+  margin-bottom: 25px; /* space l p mn ta7t */
+}
+
+.features-list{
+  margin-bottom: 40px;  /* space l p mn ta7t */
+}
+
+.features-list-item{
+  display: flex; /* katjib icon hda title dyalha */
+  align-items: center;
+  gap: 5px; /* taba3ud ma byn icon w title dyalha */
+  font-size: var(--fs-5);
+  color: var(--cool-gray);
+  margin-bottom: 10px; /* space mn lta7t */
+}
+
+.features-list-item ion-icon{
+  font-size: 23px;
+}
+
+.features-list-item p{
+  width: calc(100% - 28px);  
+}
+
+.features-wrapper:list-child{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn-group{
+  display: flex; /* kyjib button f nafs star */
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px; /* tba3ud ma byn button */
+}
+
+
+/*-----------------------------*\
+ #BLOG
+\*-----------------------------*/
+.blog{
+  padding-block: var(--section-padding); /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir section */
+}
+
+.blog .section-title{
+  margin-bottom: 20px; /* space mn lta7t l title */
+}
+
+.blog .section-text{
+  margin-bottom: 40px;  /* masafa mn lta7t l p */
+}
+
+.blog-list{
+  display: grid;
+  gap: 30px; /* taba3ud ma byn cards */
+}
+
+.blog-banner{
+  margin-bottom: 20px; /* space mn lta7t l div dyal img */
+}
+
+.blog-banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.blog-meta{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; /* katba3d 3nasir blog-meta */
+  font-size: var(--fs-6);
+  text-transform: uppercase; /* 7ruf kbar */
+  color: var(--cool-gray);
+  margin-bottom: 10px; /* space khariji mn ta7t */
+}
+
+.blog-meta span{
+  display: flex; /* kay7ut time w icon w p f line wahd */
+  align-items: center;
+  gap: 5px; /* taba3ud 3naser */
+}
+
+.blog-title{
+  font-size: var(--fs-3);
+  color: var(--independence);
+}
+
+.blog-text{
+  color: var(--fs-3);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  margin-bottom: 15px; /* space khariji mn ta7t */
+}
+
+.blog-link-btn{
+  display: flex; /* kayjib icon hda link */
+  align-items: center;
+  gap: 5px;
+  color: var(--majorelle-blue);
+  font-weight: var(--fw-600);
+}
+
+.blog-link-btn:is(:hover,:focus){
+  color: #314e69;  /* hover knbdlu bih link dyal learn more */
+}
+
+/*-----------------------------*\
+ #CONATCT
+\*-----------------------------*/
+.contact{
+  padding-block: var(--section-padding); /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir section */
+  background: var(--ghost-white-1);
+}
+
+.contact .section-title{
+  margin-bottom: 15px; /* space khariji mn ta7t */
+}
+
+.contact .section-text{
+  margin-bottom: 60px; /* space khariji mn lta7t l p */
+}
+
+.contact-form{
+  margin-bottom: 50px; /* space khariji mn ta7t (ta7t button) */
+}
+
+.input-wrapper{
+  margin-bottom: 20px; /* space khariji mn ta7t dyal input */
+}
+
+.contact label{ /* ay label f section contact */
+  color: var(--independence);
+  font-weight: var(--fw-500);
+  margin-bottom: 10px; /* space khariji mn ta7t */
+}
+
+.contact .input-field{ /* ay input 3andu f class (input-field) */
+  background: transparent; /* ka yakhud background li kayn f section */
+  color: var(--independence);
+  font-size: var(--fs-7);
+  padding: 10px 15px; /* kaywas3 lblasa dyal input */
+  border: 1px solid hsla(244 , 17%, 67%, 0.3); /* 2itar 3la border */
+  border-radius: 4px;
+}
+
+.contact .input-field:focus{
+  outline: none;
+  background: var(--ghost-white-2); /* kanbadlu color dyal input fach ndiro focus */
+}
+
+textarea.input-field{
+  margin-bottom: 20px; /* space mn ta7t l textarea */
+  resize: vertical; /* !!!! */
+  min-height: 50px; /* asghar tul ymkn n3tiwh lih */
+  height: 100px;
+  max-height: 200px; /* akbar tul ymkn lina n3tiwh lih */
+}
+
+.contact .btn-primary{
+  display: flex; /* katjib l3nwan hda icon */
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* taba3ud icon w title dyalha */
+}
+
+.contact .btn-primary ion-icon{
+  --ionicon-stroke-width: 40px; /* effect lkaydir b7al font weight */
+}
+
+.contact-list li:not(:last-child) {
+  margin-bottom: 25px; /* space mn ta7t lga3 li */
+}
+
+.contact-link{
+  color: var(--cool-gray);
+  font-weight: var(--fw-500);
+  display: flex; /* kaayjib icons hda title dyalha */
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;  /* taba3ud */
+}
+
+.contact-link ion-icon{
+  font-size: 20px;
+  --ionicon-stroke-width: 30px;
+}
+
+/*-----------------------------*\
+ #FOOTER
+\*-----------------------------*/
+
+footer{
+  background: var(--raisin-black-1);
+  color: var(--white-opacity);
+  font-weight: var(--fw-500);
+}
+
+.footer-top{
+  padding-block: var(--section-padding); /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir section  */
+}
+
+.footer-brand{
+  margin-bottom: 60px; /* space mn lta7t l class */
+}
+
+footer .logo{
+  margin-bottom: 25px; /* spacemn lta7t l logo */
+}
+
+footer .logo img{
+  width: 250px;
+  margin-left: 0;
+  color: white;
+}
+
+.footer-text{
+  font-size: var(--fs-6);
+  line-height: 1.8;
+  margin-bottom: 25px; /* space mn ta7t l p */
+}
+
+.social-list{
+  display: flex; /* katji f line wahd */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;  /* taba3ud l3naser */
+}
+
+.social-link{
+  color: var(--white-opacity);
+  font-size: 25px;
+  transition: var(--transition);  /* kandiru transition bach mn ba3d ndiru hover ! */
+}
+
+.social-link:link:is(:hover, :focus){
+  color: var(--white);
+}
+
+.footer-link-box{
+  display: grid;
+  gap: 50px; /* space mn ta7t lkul ul */
+}
+
+.footer-list li:first-child{
+  margin-bottom: 20px; /* kat3ti lkul awel 3nwan space mn lta3t ya3ni (first-child) */
+}
+
+.footer-item-title{
+  color: var(--white);
+  font-family: var(--ff-mulish);
+  font-weight: var(--fw-700);
+}
+
+.footer-link{
+  color: var(--white-opacity);
+  font-size: var(--fs-6);
+  transition: var(--transition);  /* kandiru transition bach mn ba3d ndiru hover ! */
+  padding-block: 10px;  /* b7al padding top masafa mn fu9 mn bsya section w masafa mn ta7t f akhir */
+}
+
+.footer-link:is(:hover, :focus) {
+  color: var(--white);
+  transform: translateX(5px);  /* f hover kayt7ark 5px f x */
+}
+
+.footer-bottom{
+  background: var(--raisin-black-2);
+  padding-block: 20px;
+  text-align: center; /* tayjib 3naser wst */
+}
+
+.copyright a{
+  display: inline-block; /* l3naser f star */
+  color: var(--white-opacity);
+  transition: var(--transition);
+}
+
+.copyright a:is(:hover, :focus) {
+  color: var(--white);
+}
+
+ 
+/*-----------------------------*\
+ #MEDIA QUERIES
+\*-----------------------------*/
+
+/**
+* responsive for larger than 450px screen
+*/
+
+@media (min-width: 450px) {
+  /**
+  * HERO
+  */
+
+  .hero-form{
+    position: relative;
+  }
+  .email-field{
+    margin-bottom: 0; /* kayt7ayd space mn ta7t w katlsa9 butoon m3a input */
+    padding-right: 155px;
+  }
+
+  .hero .btn-primary{
+    position: absolute; /* katkhlina n7arku button */
+    top: 5px; /* kttetla3 button fu9 input */
+    right: 5px; /* a9sa lyamiiiin */
+    padding-block: 12.5px; /* kayjib button wst */
+  }
+
+  /**
+  * ABOUT
+  */
+
+  /* katwali lktba f juj stur f cards */
+  .about-card .card-text{
+    max-width: 300px;
+    margin-inline: auto;
+  }
+}
+
+
+/**
+* responsive for larger than 576px screen
+*/
+
+@media (min-width: 576px) {
+
+  /**
+  * CUSTOM PROPERTY
+  */
+  :root{
+    /**
+    * typography
+    */
+
+    --fs-1 : 52px;
+  }
+
+  /**
+  * REUSED STYLE
+  */
+
+  .container{
+    max-width: 525px; /* kan3tiw 3ard a9sa l container */
+    margin-inline: auto;  /* margin inline auto kaydi content kulu lwst => y3ni space mn jnab bjuj */
+  }
+
+  .section-text{
+    max-width: 460px; /* kan3rdu praghraph likayn f section text */
+    margin-inline: auto; /* kayraj3 p lwst */
+  }
+
+}
+
+
+
+
+/**
+* responsive for larger than 768px screen
+*/
+
+@media (min-width: 786px) {
+
+  /**
+  * REUSED STYLE
+  */
+
+  .container{
+    max-width: 720px;  /* kan3tiw 3ard a9sa l container */
+  }
+  .section-text{
+    max-width: 645px;  /* kan3rdu praghraph likayn f section text */
+  }
+
+  /**
+  *HERO
+  */
+
+  .hero :is(.hero-text, .form-text, .hero-form){
+    max-width: 520px;  /* had l3anaser li haddna kan3tiwhum 3ard a9sa 9al mli kan 3andhum */
+  }
+
+  .hero-banner{
+    max-width: 600px; /* kan9su mn 3ard suwra b3ard a9sa */
+    margin-inline: auto;  /* kayrud swra l wst  */
+  }
+
+  /**
+  * ABOUT
+  */
+
+  .about-list{
+    grid-template-columns: 1fr 1fr; /* kan9sum cards l3a juj stur */
+  }
+
+
+  /**
+  * CONTACT
+  */
+
+  .contact-form .wrapper-flex{
+    display: flex; /* kanjibu input name hda input email */
+    gap: 30px; /* taba3ud */
+  }
+
+  .wrapper-flex .input-wrapper{
+    width: 50%; /* input name w email kaykhdu 3ard container kula whd 50% */
+  }
+
+  /**
+  * FOOTER
+  */
+
+  .footer-link-box{
+    grid-template-columns: repeat(3, 1fr); /* 3 x 1 y3ni 3 stur  */
+  }
+
+}
+
+
+
+/**
+* responsive for larger than 992px screen
+*/
+
+@media (min-width: 992px){
+  /**
+  * REUSED STYLE
+  */
+
+
+
+  .container{
+    max-width: 950px; /* kan3tiw 3ard a9sa l container */
+  }
+  .section-text{
+    max-width: 450px; /* kan9su mn width max dyal p dyal section text */
+  }
+
+  .hero .container{
+    display: grid;
+    grid-template-columns: 4fr 5fr; /* katjib swra columns bu7dha */
+    align-items: center; /* ka twstn swra bnsba l content mo9abel */
+    gap: 60px; /* taba3ud */
+  }
+  .hero-content{
+    margin-bottom: 0; /* bach ytn9ass mn space lt7tani */
+  }
+
+
+  /**
+  * ABOUT
+  */
+
+
+
+
+  .about .container{
+    display: flex; /* kanwz3 content f jiha w cards f jiha */
+    align-items: center; /* kanwstn content bnsba l cards */
+    gap: 50px; /* taba3ud */
+  }
+
+  .about-content{
+    margin-bottom: 0;
+    width: 40%; /* kan9su lih mn 3ard bach cards ytzad width dyalhum */
+  }
+
+  .about-list{
+    gap: 30px; /* zyadt taba3ud byn cards */
+    padding-bottom: 50px; /* space mn ta7t dakhili bach ysawbu dikor column tal3 w wahd habt */
+  }
+
+  /* bach kansawbu dikor dyal column tal3 w wahd habt*/
+  .about-list li:nth-child(odd){
+    transform: translateY(50px);
+  }
+
+  /**
+  * FEATURES
+  */
+
+
+
+
+  .features-wrapper{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr; /* katjib content f saf whd m3a swra */
+    align-items: center; /* katwastn 3nser bnsba l3nser lm3ah f div */
+    gap: 90px; /* taba3ud */
+  }
+
+  .features-wrapper:not(:last-child){
+    margin-bottom: 100px; /* space khariji mn ta7t features wrapper lawl ( bach tkun masafa fach n9lbu last child  ) */
+  }
+
+  /* kan9lbu tijah content akhir (last child) */
+  .features-wrapper:last-child .features-banner{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+
+  /**
+  *BLOG
+  */
+
+
+
+
+  .blog-list{
+    grid-template-columns: repeat(3, 1fr); /* katjib bloggers f star whd 3 x 1 */
+  }
+
+  .blog .section-text{
+    margin-bottom: 50px; /* space mn lta7t l section text */
+  }
+
+  /**
+  * CONTACT
+  */
+  
+
+
+  .contact-wrapper{
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* div inputs yakhud 3fr w div links 2fr */
+    gap: 80px; /* taba3ud */
+    align-items: center; /* kaywstn 3naser bnsba lba3diha */
+  }
+  .contact-form{
+    margin-bottom: 0; /* kan7aydu space khriji lkayn lta7t w kay3ud div links m9ad m3a form inputs */
+  }
+  
+
+
+
+
+  /**
+  * FOOTER
+  */
+
+  .footer-top .container{
+    display: flex; /* footer brand f columns w footer link box f columns */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* taba3ud */
+  }
+
+  .footer-brand{
+    margin-bottom: 0; /* 2izalt space lt7tani */
+    max-width: 300px; /* kan7adu width bach footer link box ykhud tisa3 */
+  }
+
+  .footer-list{
+    width: 140px; /* kan3tiwh width bach yzid yban */
+  }
+
+}
+
+
+
+
+
+/**
+* responsive for larger than 1200px screen
+*/
+
+@media (min-width: 1200px){
+
+  /**
+  * REUSED STYLE
+  */
+
+  .container{
+    max-width: 1150px;  /* kan3tiw 3ard a9sa l container */
+  }
+
+  /**
+  * HERO
+  */
+
+  .hero .container{
+    gap: 150px;
+  }
+
+  /**
+  * FOOTER
+  */
+
+  .footer-link-box{
+    margin-right: 40px; /* space khariji mn limen */
+  }
+  .footer-list{
+    width: 170px;  /* kan3tiwh width bach yzid yban */
+  }
+}
+
+
+
+
+
+/* Btn Scroll Up*/
+#btnn{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 15%;
+  border: none;
+  background: var(--majorelle-blue);
+  color: var(--white);
+  cursor: pointer;
+  display: none;
+  
+}
+
+
+
